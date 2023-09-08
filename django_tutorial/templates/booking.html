@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%load crispy_forms_tags %}
+{%block title%}
+about
+ {%endblock%}
+ {%block content%}
+ <h1 class="text-center">Book Appointment</h1>
+ <hr>
+ <div class="mx-auto w-45 bg-light  text-danger p-3 my-2 border  rounded" >
+  <h1>Dear Valued Patients,</h1>
+  <h2>We would like to take a moment to remind you of City Hospital's appointment policy. 
+    To ensure fair and efficient scheduling for all our patients, 
+    we kindly request that you refrain from booking multiple appointments for the same time slot or day.
+    Our commitment to providing high-quality care to each patient is unwavering, and managing appointment 
+    slots efficiently helps us serve you better. Overbooking can lead to delays and inconvenience for both you and other patients.
+  </h2>
+</div>
+ <div class="container w-45 text-center my-2 bg-info py-5 border border-warning rounded" >
+ <form action="" method="POST">
+   {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <button class="btn btn-primary" type="submit">Book</button>
+ <hr>
+</form>
+</div>
+  {%endblock%}
+
